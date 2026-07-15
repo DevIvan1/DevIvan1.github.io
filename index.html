@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEVIVAN — Сайты, которые работают на ваш бизнес</title>
+  <meta name="description" content="DEVIVAN — разработка премиальных лендингов и сайтов под ключ. Дизайн. Разработка. Результат.">
+  <meta property="og:title" content="DEVIVAN — веб-разработка премиум-уровня">
+  <meta property="og:description" content="Лендинги и сайты под ключ: от идеи и дизайна до запуска и результата.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236C63FF'/%3E%3Cstop offset='1' stop-color='%238A2BE2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='%23070812'/%3E%3Ctext x='16' y='22' font-size='14' font-family='monospace' font-weight='bold' fill='url(%23g)' text-anchor='middle'%3E%3C/%3E%3C/text%3E%3Cpath d='M12 10l-5 6 5 6M20 10l5 6-5 6M17.5 9l-3 14' stroke='url(%23g)' stroke-width='2.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <noscript>
+    <style>
+      .reveal, .reveal-lines { opacity: 1 !important; transform: none !important; }
+      .preloader, .cursor-glow { display: none !important; }
+    </style>
+  </noscript>
+</head>
+<body>
+
+  <!-- ===== PRELOADER ===== -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__logo">
+      <svg viewBox="0 0 48 48" width="56" height="56" fill="none" aria-hidden="true">
+        <path d="M17 14l-8 10 8 10M31 14l8 10-8 10M27 12l-6 24" stroke="url(#plg)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <defs><linearGradient id="plg" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#6C63FF"/><stop offset="1" stop-color="#8A2BE2"/></linearGradient></defs>
+      </svg>
+      <span class="preloader__word">DEV<em>I</em>VAN</span>
+    </div>
+    <div class="preloader__bar"><span id="preloaderBar"></span></div>
+  </div>
+
+  <!-- ===== CURSOR GLOW ===== -->
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo" aria-label="DEVIVAN — на главную">
+        <svg viewBox="0 0 48 48" width="30" height="30" fill="none" aria-hidden="true">
+          <path d="M17 14l-8 10 8 10M31 14l8 10-8 10M27 12l-6 24" stroke="url(#nlg)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <defs><linearGradient id="nlg" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#6C63FF"/><stop offset="1" stop-color="#8A2BE2"/></linearGradient></defs>
+        </svg>
+        <span>DEV<em>I</em>VAN</span>
+      </a>
+      <nav class="nav__links" aria-label="Основная навигация">
+        <a href="#about">Обо мне</a>
+        <a href="#services">Услуги</a>
+        <a href="#works">Кейсы</a>
+        <a href="#why">Преимущества</a>
+        <a href="#stack">Технологии</a>
+      </nav>
+      <a href="#contact" class="btn btn--primary nav__cta">Обсудить проект
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <button class="nav__burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== MOBILE MENU ===== -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav aria-label="Мобильная навигация">
+      <a href="#about">Обо мне</a>
+      <a href="#services">Услуги</a>
+      <a href="#works">Кейсы</a>
+      <a href="#why">Преимущества</a>
+      <a href="#stack">Технологии</a>
+      <a href="#contact" class="mobile-menu__cta">Обсудить проект</a>
+    </nav>
+  </div>
+
+  <main id="main">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+      <canvas class="hero__particles" id="particles" aria-hidden="true"></canvas>
+      <div class="hero__glow hero__glow--1" aria-hidden="true"></div>
+      <div class="hero__glow hero__glow--2" aria-hidden="true"></div>
+      <div class="hero__ghost" aria-hidden="true">DEVIVAN</div>
+
+      <div class="hero__inner">
+        <div class="hero__left">
+          <p class="hero__kicker reveal"><span class="hero__kicker-line"></span>Веб-разработка · под ключ</p>
+          <h1 class="hero__title">
+            <span class="hero__title-line"><span>Сайты, которые</span></span>
+            <span class="hero__title-line"><span class="grad">работают</span></span>
+            <span class="hero__title-line"><span>на ваш бизнес</span></span>
+          </h1>
+          <p class="hero__sub reveal">Премиальные лендинги и сайты под ключ — от идеи и дизайна
+            до запуска и результата. Дизайн. Разработка. Результат.</p>
+          <div class="hero__actions reveal">
+            <a href="#contact" class="btn btn--primary btn--lg">Обсудить проект
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#works" class="btn btn--ghost btn--lg">Смотреть кейсы</a>
+          </div>
+          <dl class="hero__stats reveal">
+            <div><dt>50+</dt><dd>проектов</dd></div>
+            <div><dt>100%</dt><dd>довольных клиентов</dd></div>
+            <div><dt>2–5</dt><dd>дней на лендинг</dd></div>
+          </dl>
+        </div>
+
+        <div class="hero__figure" id="heroFigure">
+          <div class="hero__portal" aria-hidden="true"></div>
+          <img src="assets/hero-character.png" alt="CGI-образ основателя DEVIVAN — разработчика сайтов" class="hero__char" id="heroChar" fetchpriority="high" width="960" height="1286">
+          <div class="hero__card hero__card--1 glass" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="m8 6-6 6 6 6M16 6l6 6-6 6" stroke="url(#hc1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="hc1" x1="0" y1="0" x2="24" y2="24"><stop stop-color="#6C63FF"/><stop offset="1" stop-color="#8A2BE2"/></linearGradient></defs></svg>
+            <div><strong>Чистый код</strong><span>семантика · скорость</span></div>
+          </div>
+          <div class="hero__card hero__card--2 glass" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M13 2 4.09 12.69c-.4.48-.06 1.21.57 1.21H11l-1 8 8.91-10.69c.4-.48.06-1.21-.57-1.21H13l1-8Z" stroke="url(#hc2)" stroke-width="2" stroke-linejoin="round"/><defs><linearGradient id="hc2" x1="0" y1="0" x2="24" y2="24"><stop stop-color="#6C63FF"/><stop offset="1" stop-color="#8A2BE2"/></linearGradient></defs></svg>
+            <div><strong>Быстрый запуск</strong><span>2–5 дней</span></div>
+          </div>
+          <div class="hero__card hero__card--3 glass" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 8-8M15 7h6v6" stroke="url(#hc3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="hc3" x1="0" y1="0" x2="24" y2="24"><stop stop-color="#6C63FF"/><stop offset="1" stop-color="#8A2BE2"/></linearGradient></defs></svg>
+            <div><strong>Рост заявок</strong><span>дизайн, который продаёт</span></div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#marquee" class="hero__scroll" aria-label="Прокрутить вниз">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ===== MARQUEE ===== -->
+    <div class="marquee" id="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Дизайн</span><i>✦</i><span>Разработка</span><i>✦</i><span>Результат</span><i>✦</i><span>Лендинги</span><i>✦</i><span>Сайты под ключ</span><i>✦</i><span>UI/UX</span><i>✦</i><span>Анимации</span><i>✦</i>
+        <span>Дизайн</span><i>✦</i><span>Разработка</span><i>✦</i><span>Результат</span><i>✦</i><span>Лендинги</span><i>✦</i><span>Сайты под ключ</span><i>✦</i><span>UI/UX</span><i>✦</i><span>Анимации</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-tag reveal">01 · Обо мне</p>
+          <h2 class="section-title reveal-lines">Разработчик, который отвечает <span class="grad">за результат</span></h2>
+        </div>
+        <div class="about__grid">
+          <div class="about__text reveal">
+            <p class="about__lead">Я — Иван, основатель DEVIVAN. Проектирую и собираю сайты,
+              которые выглядят как продукт дорогой студии и приводят клиентов, а не просто «висят в интернете».</p>
+            <p>Каждый проект прохожу от первого брифа до передачи готового сайта: исследование ниши,
+              структура, дизайн, вёрстка, анимации, оптимизация и запуск. Никаких конвейерных решений —
+              только осмысленная работа под конкретный бизнес.</p>
+            <p>Работаю быстро, потому что процесс отлажен. Работаю аккуратно, потому что дьявол — в деталях:
+              сетка, ритм, типографика, микроанимации и скорость загрузки решают, останется посетитель или уйдёт.</p>
+          </div>
+          <ul class="about__facts">
+            <li class="glass reveal"><strong>Под ключ</strong><span>от идеи и дизайна до запуска и поддержки</span></li>
+            <li class="glass reveal"><strong>Скорость</strong><span>лендинг за 2–5 дней без потери качества</span></li>
+            <li class="glass reveal"><strong>Детали</strong><span>пиксельная точность, ритм и типографика</span></li>
+            <li class="glass reveal"><strong>Индивидуально</strong><span>дизайн под задачу, а не шаблон под всех</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section class="services section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-tag reveal">02 · Услуги</p>
+          <h2 class="section-title reveal-lines">Что я <span class="grad">делаю</span></h2>
+        </div>
+        <ul class="services__list">
+          <li class="service reveal">
+            <span class="service__num">01</span>
+            <h3>Landing Page</h3>
+            <p>Продающие одностраничники с сильным оффером, анимациями и фокусом на конверсию.</p>
+            <svg class="service__arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </li>
+          <li class="service reveal">
+            <span class="service__num">02</span>
+            <h3>Корпоративные сайты</h3>
+            <p>Многостраничные сайты для компаний: структура, контент, презентация услуг и команды.</p>
+            <svg class="service__arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </li>
+          <li class="service reveal">
+            <span class="service__num">03</span>
+            <h3>Промо-сайты</h3>
+            <p>Яркие кампании под запуск продукта или события — с cinematic-подачей и wow-эффектом.</p>
+            <svg class="service__arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </li>
+          <li class="service reveal">
+            <span class="service__num">04</span>
+            <h3>Сайты для бизнеса</h3>
+            <p>Решения под задачи: запись клиентов, каталог, заявки, интеграции с CRM и мессенджерами.</p>
+            <svg class="service__arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </li>
+          <li class="service reveal">
+            <span class="service__num">05</span>
+            <h3>Редизайн</h3>
+            <p>Обновление устаревших сайтов: новый визуал, скорость и структура без потери позиций.</p>
+            <svg class="service__arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </li>
+          <li class="service reveal">
+            <span class="service__num">06</span>
+            <h3>UI/UX и анимации</h3>
+            <p>Современный интерфейс, микровзаимодействия, scroll-анимации и адаптив под все устройства.</p>
+            <svg class="service__arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </li>
+          <li class="service reveal">
+            <span class="service__num">07</span>
+            <h3>Оптимизация</h3>
+            <p>Скорость загрузки, Core Web Vitals, SEO-готовность и высокие показатели Lighthouse.</p>
+            <svg class="service__arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </li>
+          <li class="service reveal">
+            <span class="service__num">08</span>
+            <h3>Техническая поддержка</h3>
+            <p>Сопровождение после запуска: правки, обновления, контроль работоспособности.</p>
+            <svg class="service__arrow" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== WORKS ===== -->
+    <section class="works section" id="works">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-tag reveal">03 · Кейсы</p>
+          <h2 class="section-title reveal-lines">Избранные <span class="grad">работы</span></h2>
+        </div>
+      </div>
+      <div class="works__grid container">
+        <article class="work reveal" data-full="assets/work-gym.png">
+          <button class="work__frame" aria-label="Открыть кейс: фитнес-клуб СЕВЕР">
+            <img src="assets/work-gym.png" alt="Лендинг фитнес-клуба СЕВЕР — тёмный спортивный дизайн с крупной типографикой" loading="lazy" width="1354" height="676">
+          </button>
+          <div class="work__meta">
+            <div>
+              <h3>СЕВЕР — фитнес-клуб</h3>
+              <p>Лендинг · спортивный характер, крупная типографика, живые данные зала</p>
+            </div>
+            <span class="work__tag">Landing Page</span>
+          </div>
+        </article>
+        <article class="work reveal" data-full="assets/work-sushi.png">
+          <button class="work__frame" aria-label="Открыть кейс: ресторан АКАМИ">
+            <img src="assets/work-sushi.png" alt="Сайт суши-ресторана АКАМИ — тёмный премиальный дизайн с акцентной подачей блюд" loading="lazy" width="1341" height="667">
+          </button>
+          <div class="work__meta">
+            <div>
+              <h3>АКАМИ — ресторан</h3>
+              <p>Сайт ресторана · тихая роскошь, editorial-типографика, бронирование</p>
+            </div>
+            <span class="work__tag">Сайт для бизнеса</span>
+          </div>
+        </article>
+        <article class="work reveal" data-full="assets/work-beauty.png">
+          <button class="work__frame" aria-label="Открыть кейс: ателье красоты VELOUR">
+            <img src="assets/work-beauty.png" alt="Сайт ателье красоты VELOUR — светлый элегантный дизайн с мягкой палитрой" loading="lazy" width="1344" height="674">
+          </button>
+          <div class="work__meta">
+            <div>
+              <h3>VELOUR — ателье красоты</h3>
+              <p>Лендинг · мягкая палитра, доверие и онлайн-запись</p>
+            </div>
+            <span class="work__tag">Landing Page</span>
+          </div>
+        </article>
+        <article class="work reveal" data-full="assets/work-tattoo.png">
+          <button class="work__frame" aria-label="Открыть кейс: тату-студия Чёрный Контур">
+            <img src="assets/work-tattoo.png" alt="Сайт тату-студии Чёрный Контур — контрастный чёрно-красный дизайн" loading="lazy" width="1343" height="673">
+          </button>
+          <div class="work__meta">
+            <div>
+              <h3>Чёрный Контур — тату-студия</h3>
+              <p>Лендинг · дерзкий характер, контраст, запись к мастерам</p>
+            </div>
+            <span class="work__tag">Landing Page</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== WHY ===== -->
+    <section class="why section" id="why">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-tag reveal">04 · Преимущества</p>
+          <h2 class="section-title reveal-lines">Почему выбирают <span class="grad">меня</span></h2>
+        </div>
+        <ul class="why__grid">
+          <li class="why__card glass reveal">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5Z" stroke="url(#w1)" stroke-width="1.8" stroke-linejoin="round"/><path d="m3 7 9 5m0 0 9-5m-9 5v10" stroke="url(#w1)" stroke-width="1.8" stroke-linejoin="round"/><defs><linearGradient id="w1" x1="0" y1="0" x2="24" y2="24"><stop stop-color="#6C63FF"/><stop offset="1" stop-color="#8A2BE2"/></linearGradient></defs></svg>
+            <h3>Современный дизайн</h3>
+            <p>Актуальные визуальные приёмы уровня международных студий — без шаблонности.</p>
+          </li>
+          <li class="why__card glass reveal">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 2 4.09 12.69c-.4.48-.06 1.21.57 1.21H11l-1 8 8.91-10.69c.4-.48.06-1.21-.57-1.21H13l1-8Z" stroke="url(#w2)" stroke-width="1.8" stroke-linejoin="round"/><defs><linearGradient id="w2" x1="0" y1="0" x2="24" y2="24"><stop stop-color="#6C63FF"/><stop offset="1" stop-color="#8A2BE2"/></linearGradient></defs></svg>
+            <h3>Высокая скорость</h3>
+            <p>Быстрая загрузка и высокие показатели Lighthouse — сайт не теряет клиентов на старте.</p>
+          </li>
+          <li class="why__card glass reveal">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="4" width="20" height="14" rx="2" stroke="url(#w3)" stroke-width="1.8"/><path d="M8 22h8m-4-4v4" stroke="url(#w3)" stroke-width="1.8" stroke-linecap="round"/><defs><linearGradient id="w3" x1="0" y1="0" x2="24" y2="24"><stop stop-color="#6C63FF"/><stop offset="1" stop-color="#8A2BE2"/></linearGradient></defs></svg>
+            <h3>Адаптивность</h3>
+            <p>Идеальное отображение на всех устройствах — от смартфона до широкого монитора.</p>
+          </li>
+          <li class="why__card glass reveal">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m8 6-6 6 6 6M16 6l6 6-6 6" stroke="url(#w4)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="w4" x1="0" y1="0" x2="24" y2="24"><stop stop-color="#6C63FF"/><stop offset="1" stop-color="#8A2BE2"/></linearGradient></defs></svg>
+            <h3>Чистый код</h3>
+            <p>Семантика, порядок и структура — сайт легко поддерживать и развивать.</p>
+          </li>
+          <li class="why__card glass reveal">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="3" stroke="url(#w5)" stroke-width="1.8"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M4.9 4.9l2.2 2.2m9.8 9.8 2.2 2.2m0-14.2-2.2 2.2M7.1 16.9l-2.2 2.2" stroke="url(#w5)" stroke-width="1.8" stroke-linecap="round"/><defs><linearGradient id="w5" x1="0" y1="0" x2="24" y2="24"><stop stop-color="#6C63FF"/><stop offset="1" stop-color="#8A2BE2"/></linearGradient></defs></svg>
+            <h3>Внимание к деталям</h3>
+            <p>Сетка, отступы, ритм и микроанимации выверены до пикселя.</p>
+          </li>
+          <li class="why__card glass reveal">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="url(#w6)" stroke-width="1.8"/><path d="m20 20-3.5-3.5" stroke="url(#w6)" stroke-width="1.8" stroke-linecap="round"/><defs><linearGradient id="w6" x1="0" y1="0" x2="24" y2="24"><stop stop-color="#6C63FF"/><stop offset="1" stop-color="#8A2BE2"/></linearGradient></defs></svg>
+            <h3>SEO-ready</h3>
+            <p>Семантическая вёрстка и техническая база для роста позиций и трафика.</p>
+          </li>
+          <li class="why__card glass reveal">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22c5-2 8-5.5 8-11V5l-8-3-8 3v6c0 5.5 3 9 8 11Z" stroke="url(#w7)" stroke-width="1.8" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="url(#w7)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="w7" x1="0" y1="0" x2="24" y2="24"><stop stop-color="#6C63FF"/><stop offset="1" stop-color="#8A2BE2"/></linearGradient></defs></svg>
+            <h3>Поддержка</h3>
+            <p>Не пропадаю после запуска: правки, консультации и развитие проекта.</p>
+          </li>
+          <li class="why__card glass reveal">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 21a8 8 0 1 0-16 0" stroke="url(#w8)" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="8" r="4" stroke="url(#w8)" stroke-width="1.8"/><defs><linearGradient id="w8" x1="0" y1="0" x2="24" y2="24"><stop stop-color="#6C63FF"/><stop offset="1" stop-color="#8A2BE2"/></linearGradient></defs></svg>
+            <h3>Индивидуальный подход</h3>
+            <p>Погружаюсь в нишу и задачи бизнеса — решение всегда под вас, а не «как у всех».</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== STACK ===== -->
+    <section class="stack section" id="stack">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-tag reveal">05 · Технологии</p>
+          <h2 class="section-title reveal-lines">Мой <span class="grad">стек</span></h2>
+        </div>
+        <ul class="stack__grid reveal" id="stackGrid">
+          <li data-tech="html"><span class="stack__icon"></span>HTML</li>
+          <li data-tech="css"><span class="stack__icon"></span>CSS</li>
+          <li data-tech="js"><span class="stack__icon"></span>JavaScript</li>
+          <li data-tech="ts"><span class="stack__icon"></span>TypeScript</li>
+          <li data-tech="react"><span class="stack__icon"></span>React</li>
+          <li data-tech="next"><span class="stack__icon"></span>Next.js</li>
+          <li data-tech="tailwind"><span class="stack__icon"></span>Tailwind CSS</li>
+          <li data-tech="framer"><span class="stack__icon"></span>Framer Motion</li>
+          <li data-tech="gsap"><span class="stack__icon"></span>GSAP</li>
+          <li data-tech="three"><span class="stack__icon"></span>Three.js</li>
+          <li data-tech="claude"><span class="stack__icon"></span>Claude Code</li>
+          <li data-tech="ai"><span class="stack__icon"></span>AI Workflow</li>
+          <li data-tech="vercel"><span class="stack__icon"></span>Vercel</li>
+          <li data-tech="git"><span class="stack__icon"></span>Git</li>
+          <li data-tech="github"><span class="stack__icon"></span>GitHub</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="contact section" id="contact">
+      <div class="contact__glow" aria-hidden="true"></div>
+      <div class="container">
+        <p class="section-tag reveal">06 · Контакты</p>
+        <h2 class="contact__title reveal-lines">Запустим ваш бизнес <span class="grad">на новый уровень</span></h2>
+        <p class="contact__sub reveal">Напишите — обсудим задачу, сроки и подход. Отвечаю быстро.</p>
+        <div class="contact__links reveal">
+          <a class="contact-link glass" href="https://t.me/DevIvan1" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21.9 4.1 2.9 11.4c-1 .4-1 1.5.1 1.8l4.6 1.4 1.8 5.5c.3.9 1.3 1 1.9.3l2.6-2.6 4.7 3.5c.7.5 1.7.1 1.9-.8l3-14.9c.2-1.1-.7-1.9-1.6-1.5ZM9 14.4l8.5-6.9c.3-.2.6.2.4.4l-6.9 6.7-.3 3.1L9 14.4Z" fill="currentColor"/></svg>
+            <span><strong>Telegram</strong><em>@DevIvan1 — написать напрямую</em></span>
+          </a>
+          <a class="contact-link glass" href="https://t.me/DevIvan_1" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.6 6.8-1.6 7.5c-.1.5-.4.6-.9.4l-2.4-1.8-1.2 1.1c-.1.1-.2.2-.5.2l.2-2.5 4.6-4.1c.2-.2 0-.3-.3-.1l-5.7 3.6-2.4-.8c-.5-.2-.5-.5.1-.8l9.4-3.6c.4-.1.8.1.7.9Z" fill="currentColor"/></svg>
+            <span><strong>Telegram-канал</strong><em>кейсы и процесс работы</em></span>
+          </a>
+          <a class="contact-link glass" href="https://vk.com/devivan" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12.8 18.7c-6.6 0-10.4-4.6-10.6-12.1h3.4c.1 5.5 2.5 7.9 4.4 8.3V6.6h3.2v4.8c1.9-.2 3.9-2.4 4.6-4.8h3.1a9.3 9.3 0 0 1-4.2 6c1.9.9 3.9 2.9 4.7 6.1h-3.5c-.6-2.1-2.1-3.7-4.7-4v4Z" fill="currentColor"/></svg>
+            <span><strong>ВКонтакте</strong><em>личная страница</em></span>
+          </a>
+          <a class="contact-link glass" href="https://vk.com/devivan1" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M17 8a5 5 0 1 0-10 0v2.3c0 .6-.2 1.2-.6 1.7L5 14h14l-1.4-2a2.9 2.9 0 0 1-.6-1.7V8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M10 18a2 2 0 0 0 4 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <span><strong>Группа ВК</strong><em>новости и работы DEVIVAN</em></span>
+          </a>
+          <a class="contact-link glass" href="https://github.com/DevIvan1" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2A10 10 0 0 0 8.8 21.5c.5.1.7-.2.7-.5v-1.7C6.7 20 6.1 18 6.1 18c-.4-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7 0-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10 10 0 0 0 12 2Z" fill="currentColor"/></svg>
+            <span><strong>GitHub</strong><em>код и открытые проекты</em></span>
+          </a>
+          <a class="contact-link glass" href="mailto:DevIvan1@yandex.ru">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="m3 7 9 6 9-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong>Email</strong><em>DevIvan1@yandex.ru</em></span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#hero" class="nav__logo" aria-label="DEVIVAN — наверх">
+        <svg viewBox="0 0 48 48" width="26" height="26" fill="none" aria-hidden="true">
+          <path d="M17 14l-8 10 8 10M31 14l8 10-8 10M27 12l-6 24" stroke="url(#flg)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <defs><linearGradient id="flg" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#6C63FF"/><stop offset="1" stop-color="#8A2BE2"/></linearGradient></defs>
+        </svg>
+        <span>DEV<em>I</em>VAN</span>
+      </a>
+      <p class="footer__tagline">Технологии. Код. <span class="grad">Результат.</span></p>
+      <p class="footer__copy">© <span id="year">2026</span> DEVIVAN · Веб-разработка</p>
+    </div>
+  </footer>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр кейса" hidden>
+    <button class="lightbox__close" id="lightboxClose" aria-label="Закрыть просмотр">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <div class="lightbox__scroll"><img src="" alt="Скриншот кейса в полном размере" id="lightboxImg"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
